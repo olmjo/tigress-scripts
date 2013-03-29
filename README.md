@@ -25,7 +25,6 @@ Then, you can
 ```
 cd ./tigress-scripts/examples/ex0/
 qsub ex0.pbs
-
 ```
 to submit your first job.
 
@@ -67,6 +66,15 @@ interface to `R`.
 See `./examples/ex1/`.
 
 ### ex2 -- ex 1 + an R script
+
+This PBS script includes all the reasonable defaults from Example 1. The only
+change is that it uses `Rscript` to run an external R script, which is how the
+job would usually be programmed.
+
+The computational task in R is a copy of the example usage of `ideal()` from the
+R package `pscl`.
+
+See `./examples/ex2/`.
 
 ### ex3 -- ex 2 + parallel execution + passing arguments to R
 
