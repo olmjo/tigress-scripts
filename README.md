@@ -1,4 +1,4 @@
-# Example Tigress Script
+# Example Tigress Scripts
 
 Jonathan Olmsted (jpolmsted@gmail.com)
 
