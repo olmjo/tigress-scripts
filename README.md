@@ -9,6 +9,27 @@ at Princeton University. The various examples comprise different use cases and
 can be customized to anyone's liking. Nothing is a substitute for reading the
 man page: just run `man qsub` for a starting point.
 
+## Access and Use
+
+Anyone is free to use these scripts as they choose. You can not only view them
+through gh, but you can download a copy locally and run them (Note: they don't
+have many dependencies, but I can only guarantee them to work on TIGRESS
+systems.)
+
+The easiest way to get a copy is:
+```
+git clone https://github.com/olmjo/tigress-scripts.git
+```
+
+Then, you can
+```
+cd ./tigress-scripts/examples/ex0/
+qsub ex0.pbs
+
+```
+to submit your first job.
+
+
 ## Contents
 
 There are a total of five sets of scripts in this project. Each set can be used
