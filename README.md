@@ -78,5 +78,22 @@ See `./examples/ex2/`.
 
 ### ex3 -- ex 2 + parallel execution + passing arguments to R
 
+This PBS script uses the sample reasonable defaults from above, but it requests
+two processors on the node. We define the environmental variable `TOTALPROCS`
+and make sure it is available to processes started in this script (via
+`export`). Now `Rscript` has to be invoked from within the `mpiexec`
+command. The master MPI process knows what resources were allocated from
+`-hostfile $PBS_NODEFILE`. Lastly, our R script is taking a final unnamed
+argument of `8`.
+
+In the R script, the first set of commands parse the command line argument
+passed to R (i.e. `8`). The next set of commands are reading the environmental
+variable `TOTALPROCS`. We then set up the MPI backend and as each of our MPI
+workers to tell us where they are running.
+
+See `./examples/ex3/`.
+
 ### ex4 -- ex 2 + multiple simultaneous submissions + passing arguments to R
+
+
 
