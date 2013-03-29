@@ -1,0 +1,5 @@
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:10:00
+
+Rscript -e 'a <- rnorm(1e3)'
+
