@@ -4,10 +4,11 @@ Jonathan Olmsted (jpolmsted@gmail.com)
 
 ## Disclaimer
 
-These scripts are intended as an example of how to use HPC resources (TIGRESS)
-at Princeton University. The various examples comprise different use cases and
-can be customized to anyone's liking. Nothing is a substitute for reading the
-man page: just run `man qsub` for a starting point.
+These scripts are intended as an example of how to use the
+[TIGRESS](http://www.princeton.edu/researchcomputing/) HPC resources at
+Princeton University. The various examples comprise different use cases and can
+be customized to anyone's liking. Nothing is a substitute for reading the man
+page: just run `man qsub` for a starting point.
 
 ## Access and Use
 
@@ -95,5 +96,13 @@ See `./examples/ex3/`.
 
 ### ex4 -- ex 2 + multiple simultaneous submissions + passing arguments to R
 
+This PBS script now requests an array of jobs based on the template. For jobs in
+this array (indexed from 1 to 3), the shell script will run given the requested
+resources. Because the log file depends on the job ID, each of the three jobs
+will generated different `log.*` output. Because we R can read the environmental
+variable `PBS_ARRAYID`, we are able to use the index on an object of interest to
+us in R (e.g., a vector of names of files in a directory to be processed).
 
+With this setup, each sub-job is requesting the same resources.
 
+See `./examples/ex4/`.
