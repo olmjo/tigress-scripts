@@ -1,6 +1,6 @@
 # Example Tigress Script
 
-Jonathan Olmsted jpolmsted@gmail.com
+Jonathan Olmsted (jpolmsted@gmail.com)
 
 ## Disclaimer
 
@@ -15,15 +15,35 @@ There are a total of five sets of scripts in this project. Each set can be used
 to submit a perfectly legal job on Della (and elsewhere, usually). They are
 located in `./examples/`. The shell scripts with a `.pbs` suffix are PBS scripts
 for the resource manager to submit. The scripts with a `.R` suffix are R scripts
-that represent our computational jobs.
+that represent our computational jobs. The concepts covered here
+should cover most usage.
 
 ### ex0 -- bare bones
 
 This is a bare bones example. It requests 1 node with 1 processor on the
 node. It allows the scheduler to kill the job after 10 minutes. The script
-simply generates 1,000 random numbers using the `Rscript` interface.
+simply generates 1,000 random numbers using the `Rscript` interface to `R`.
+
+See `./examples/ex0/`.
 
 ### ex1 -- a reasonable default
+
+This PBS script represents a reasonable starting point for simple jobs. It is
+more explicit about how the job should be managed than Example 0. It still
+requests 1 node with 1 processor. It requests only 10 minutes of time. It uses a
+custom name in the queue and has both the error log and the output log merged
+into one file which begins with `log.*` and has a suffix determined by the job
+ID. It requests emails when it begins, ends, and aborts (the email address can
+be specified manually, but works by default on TIGRESS systems).
+
+Every line beginning with `#` is just a PBS directive. The remainder comprises
+an actual shell script. The script is verbose about where it is, when it starts,
+and what resources were given to it by the scheduler.
+
+The script ultimately generates 1,000 random numbers using the `Rscript`
+interface to `R`.
+
+See `./examples/ex1/`.
 
 ### ex2 -- ex 1 + an R script
 
