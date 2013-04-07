@@ -12,10 +12,10 @@ page: just run `man qsub` for a starting point.
 
 ## Access and Use
 
-Anyone is free to use these scripts as they choose. You can not only view them
-through gh, but you can download a copy locally and run them (Note: they don't
-have many dependencies, but I can only guarantee them to work on TIGRESS
-systems.)
+Anyone is free to use these scripts as they choose. You can not only
+view them through gh, but you can download a copy locally and run them
+(Note: they don't have many dependencies, but I can only guarantee
+them to work on Della at Princeton.)
 
 The easiest way to get a copy is:
 ```
@@ -32,12 +32,14 @@ to submit your first job.
 
 ## Contents
 
-There are a total of five sets of scripts in this project. Each set can be used
-to submit a perfectly legal job on Della (and elsewhere, usually). They are
-located in `./examples/`. The shell scripts with a `.pbs` suffix are PBS scripts
-for the resource manager to submit. The scripts with a `.R` suffix are R scripts
-that represent our computational jobs. The concepts covered here
-should cover most usage.
+There are a total of six sets of scripts in this project. Each set can
+be used to submit a perfectly legal job on Della (and elsewhere,
+usually). They are located in `./examples/`. The shell scripts with a
+`.pbs` suffix are PBS scripts for the resource manager to submit. The
+scripts with a `.R` suffix are R scripts that represent our
+computational jobs. The last example is for Matlab, and the `.m`
+script is our computational job. The concepts covered here should
+cover most usage.
 
 ### ex0 -- bare bones
 
@@ -106,3 +108,13 @@ us in R (e.g., a vector of names of files in a directory to be processed).
 With this setup, each sub-job is requesting the same resources.
 
 See `./examples/ex4/`.
+
+### ex5 -- single-node Matlab parallel execution
+
+This PBS script uses the default setup (see ex1), requests 5
+processors on a single node, and runs a Matlab script. The Matlab
+script executes a loop sequentially and then in parallel where each of
+`MC` iterations takes `MC/DUR` seconds by construction. The parallel
+loop (i.e., the one using the `parfor` construct) should be about
+`PROCS` times faster. This approach does not generalize to multiple
+nodes.
