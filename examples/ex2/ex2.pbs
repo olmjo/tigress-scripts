@@ -14,4 +14,4 @@ echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
 echo '-------------------------------'
 echo -e '\n\n'
 
-Rscript ./ex2.R11
+Rscript ./ex2.R
