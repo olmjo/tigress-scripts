@@ -17,4 +17,4 @@ EXEC=/usr/licensed/bin/matlab
 OPTS=' -singleCompThread -nodisplay -nosplash'
 export PROCS=5
 
-${EXEC}${OPTS} < example.m
+${EXEC}${OPTS} < ex5.m
