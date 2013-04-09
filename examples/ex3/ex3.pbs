@@ -5,7 +5,7 @@
 #PBS -o log.${PBS_JOBID}
 #PBS -m abe 
 
-export TOTALPROCS=2
+export TOTALPROCS=`cat $PBS_NODEFILE|wc -l`
 
 echo '-------------------------------'
 cd $PBS_O_WORKDIR

@@ -15,6 +15,7 @@ echo -e '\n\n'
 
 EXEC=/usr/licensed/bin/matlab
 OPTS=' -singleCompThread -nodisplay -nosplash'
-export PROCS=5
+
+export PROCS=`cat $PBS_NODEFILE|wc -l`
 
 ${EXEC}${OPTS} < ex5.m
