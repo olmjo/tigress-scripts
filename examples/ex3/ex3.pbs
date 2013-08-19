@@ -16,4 +16,6 @@ echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
 echo '-------------------------------'
 echo -e '\n\n'
 
+module load openmpi
+
 mpiexec -np 1 -hostfile $PBS_NODEFILE Rscript ./ex3.R 8
