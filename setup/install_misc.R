@@ -1,6 +1,11 @@
-install.packages("doMPI",
-                 "foreach",
-                 "snow",
-                 "doSNOW"
+install.packages(c("doMPI",
+                   "foreach",
+                   "snow",
+                   "doSNOW",
+                   "doRNG",
+                   "doMC",
+                   "Rcpp",
+                   "RcppArmadillo"
+                   )
                  )
 
