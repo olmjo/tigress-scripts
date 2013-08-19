@@ -45,5 +45,18 @@ done
 
 source ~/.bashrc
 
-## Rscript install_misc.R
+
+while true; do
+    read -p "Do you need to misc. HPC packages? [y/n]" yn
+    case $yn in
+        [Yy]* ) 
+            Rscript install_misc.R; 
+            break;;
+
+        [Nn]* ) 
+            break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 
