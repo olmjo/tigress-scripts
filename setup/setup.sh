@@ -21,7 +21,7 @@ while true; do
             break;;
 
         [Nn]* ) 
-            exit;;
+            break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -34,7 +34,7 @@ while true; do
             break;;
 
         [Nn]* ) 
-            exit;;
+            break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
