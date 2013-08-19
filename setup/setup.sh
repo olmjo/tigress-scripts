@@ -1,3 +1,5 @@
+. /etc/profile.d/modules.sh
+
 while true; do
     read -p "Do you need to DL Rmpi? [y/n]" yn
     case $yn in
@@ -42,8 +44,6 @@ done
 
 
 source ~/.bashrc
-
-Rscript install_rmpi.R
 
 ## Rscript install_misc.R
 
