@@ -5,25 +5,12 @@ while true; do
             wget http://www.stats.uwo.ca/faculty/yu/Rmpi/download/linux/Rmpi_0.6-3.tar.gz -O rmpi.tar.gz; 
             break;;
 
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 module load openmpi/gcc/1.4.5/64
-
-while true; do
-    read -p "Do you need to install Rmpi? [y/n]" yn
-    case $yn in
-        [Yy]* ) 
-            Rscript install_rmpi.R; 
-            break;;
-
-        [Nn]* ) 
-            exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 
 while true; do
     read -p "Do you need to add openmpi libs to the linker path? [y/n]" yn
@@ -38,6 +25,21 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
+
+while true; do
+    read -p "Do you need to install Rmpi? [y/n]" yn
+    case $yn in
+        [Yy]* ) 
+            Rscript install_rmpi.R; 
+            break;;
+
+        [Nn]* ) 
+            exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+
 
 source ~/.bashrc
 
