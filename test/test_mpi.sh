@@ -1,5 +1,6 @@
 ## Prepare Env
-module load openmpi
+. /etc/profile.d/modules.sh
+module load openmpi/gcc/1.4.5/64
 
 ## Compile Test Binary
 mpic++ hello.c -o tester
