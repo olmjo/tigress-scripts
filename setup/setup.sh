@@ -30,11 +30,12 @@ while true; do
     esac
 done
 
+ulimit -l unlimited
+
 while true; do
     read -p "Do you need to install Rmpi? [y/n]" yn
     case $yn in
         [Yy]* ) 
-            ulimit -l unlimted ;
             Rscript install_rmpi.R ; 
             break;;
 
