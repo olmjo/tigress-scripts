@@ -61,7 +61,7 @@ registerDoRNG(1)
                                         # Reproducible Parallel RNG
 output <- foreach(i = (1:nBS),
                   .combine = rbind,
-                  .export = c("law82")
+                  .export = c("law82", "sizeBS")
                   ) %dopar% {
                       ##
                       indsBS <- sample(x = 1:nrow(law82),
