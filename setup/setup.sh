@@ -12,13 +12,13 @@ while true; do
     esac
 done
 
-module load openmpi/gcc/1.6.3/64
+module load openmpi/gcc/1.4.5/64
 
 while true; do
     read -p "Do you need to add openmpi libs to the linker path? [y/n]" yn
     case $yn in
         [Yy]* )
-            echo -e "LD_LIBRARY_PATH=/usr/local/openmpi/1.6.3/gcc/x86_64/lib64\n" >> ~/.bashrc;
+            echo -e "LD_LIBRARY_PATH=/usr/local/openmpi/1.4.5/gcc/x86_64/lib64\n" >> ~/.bashrc;
             echo -e "export LD_LIBRARY_PATH\n" >> ~/.bashrc;
             break;;
 
