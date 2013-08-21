@@ -82,5 +82,5 @@ quantile(output, probs = seq(0, 1, .1))
 ## ########################
 ## Close Everything Cleanly
 ## ########################
-stopCluster(cl)
+closeCluster(cl)
 mpi.quit()

@@ -55,9 +55,5 @@ foreach(i = (1:nIters),
         }
                                         #
                                         #
-
 closeCluster(cl)
-
-
-
 mpi.quit()
