@@ -20,13 +20,12 @@ paste("nMPISZE:", nMPISIZE)
 ### ############
 library(foreach)
 library(doMPI)
-library(doSNOW)
                                         #
                                         #
 
-### ##################
-### Init MPI Backend 1
-### ##################
+### ################
+### Init MPI Backend
+### ################
 cl <- startMPIcluster(nMPISIZE)
 registerDoMPI(cl)
                                         #
@@ -59,40 +58,6 @@ foreach(i = (1:nIters),
 
 closeCluster(cl)
 
-### ##################
-### Init MPI Backend 2
-### ##################
-cl <- makeMPIcluster(nMPISIZE)
-registerDoSNOW(cl)
-                                        #
-                                        #
-
-### ##############
-### Master Process
-### ##############
-system("hostname")
-Sys.getpid()
-                                        #
-                                        #
-
-### ########################
-### Main Loop over MPI Procs
-### ########################
-foreach(i = (1:nIters),
-        .combine = rbind
-        ) %dopar% {
-          return(data.frame(
-            host = mpi.get.processor.name(),
-            pid = Sys.getpid(),
-            size = mpi.comm.size(),
-            rank = mpi.comm.rank()
-            )
-                 )
-        }
-                                        #
-                                        #
-
-stopCluster(cl)
 
 
 mpi.quit()
