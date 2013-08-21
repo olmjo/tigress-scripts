@@ -1,0 +1,21 @@
+#PBS -l nodes=1:ppn=2
+#PBS -l walltime=00:10:00
+#PBS -N Ex6
+#PBS -j oe
+#PBS -o log.${PBS_JOBID}
+#PBS -m abe 
+
+export TOTALPROCS=`cat $PBS_NODEFILE|wc -l`
+
+echo '-------------------------------'
+cd $PBS_O_WORKDIR
+echo $PBS_O_WORKDIR
+echo Running on host $(hostname)
+echo Time is $(date)
+echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
+echo '-------------------------------'
+echo -e '\n\n'
+
+module load openmpi
+
+mpiexec -np 1 -hostfile $PBS_NODEFILE Rscript ./ex6.R
