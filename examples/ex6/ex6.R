@@ -60,13 +60,13 @@ registerDoRNG(1)
                                         #
                                         # Reproducible Parallel RNG
 output <- foreach(i = (1:nBS),
-                  .combine = rbind
+                  .combine = rbind,
+                  .export = c("law82")
                   ) %dopar% {
                       ##
                       indsBS <- sample(x = 1:nrow(law82),
                                        size = sizeBS,
-                                       replace = FALSE,
-                                       .export = c("law82")
+                                       replace = FALSE
                                        )
                       subBS <- law82[indsBS, ]
                       corBS <- cor(subBS$LSAT, subBS$GPA)
