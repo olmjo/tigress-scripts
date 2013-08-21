@@ -1,5 +1,7 @@
 . /etc/profile.d/modules.sh
 
+
+
 while true; do
     read -p "Do you need to DL Rmpi? [y/n]" yn
     case $yn in
@@ -32,7 +34,8 @@ while true; do
     read -p "Do you need to install Rmpi? [y/n]" yn
     case $yn in
         [Yy]* ) 
-            Rscript install_rmpi.R; 
+            ulimit -l unlimted ;
+            Rscript install_rmpi.R ; 
             break;;
 
         [Nn]* ) 
