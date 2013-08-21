@@ -65,7 +65,8 @@ output <- foreach(i = (1:nBS),
                       ##
                       indsBS <- sample(x = 1:nrow(law82),
                                        size = sizeBS,
-                                       replace = FALSE
+                                       replace = FALSE,
+                                       .export = c("law82")
                                        )
                       subBS <- law82[indsBS, ]
                       corBS <- cor(subBS$LSAT, subBS$GPA)
