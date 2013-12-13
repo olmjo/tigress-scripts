@@ -188,7 +188,7 @@ cd ./examples/ex5/
 qsub ex5.pbs
 ```
 
-## Example 6: "Substantive" Example
+##### Example 6: "Substantive" Example
 
 This example is less a demonstration of features available (e.g., there is no
 use of job arrays or command line arguments) and, instead, shows a computational
