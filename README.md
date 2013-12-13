@@ -10,9 +10,9 @@ This project comprises a set of 6 examples scripts and a setup script to help
 prepare your HPC environment for R-based HPC. These scripts work *out of the
 box* on both Tukey and Della. More information on these scripts is below.
 
-## How to ... ?
+## How?
 
-### get a copy
+### Getting a Copy
 
 You can create a full copy of this git repository by cloning it. To do this, run
 the following at the shell prompt:
@@ -25,9 +25,9 @@ On the Princeton TIGRESS systems, `git` will be installed so this "just
 works". The same `git` command will work on your local machine if you have `git`
 installed.
 
-### use
+### Using
 
-#### Setup
+#### Setup and Test Scripts
 For all of the example scripts to work, the shell environment needs to be set up
 correctly and particular R packages need to be installed. The helper setup
 script is located in `./setup/setup.sh`. To set up your environment, simply run
@@ -91,15 +91,19 @@ computational jobs. The fifth example is for Matlab, and the `.m` script is our
 computational job. The concepts and features demonstrated here should cover
 nearly all usage.
 
-## Example 0: Bare Bones
+##### Example 0: Bare Bones
 
 This is a bare bones example. It requests 1 node with 1 processor on the
 node. It allows the scheduler to kill the job after 10 minutes. The script
 simply generates 1,000 random numbers using the Rscript interface to R.
 
-See `./examples/ex0/`.
+To run:
+```
+cd ./examples/ex0/
+qsub ex0.pbs
+```
 
-## Example 1: A Reasonable Default
+##### Example 1: A Reasonable Default
 
 This PBS script represents a reasonable starting point for simple jobs. It is
 more explicit about how the job should be managed than Example 0. It still
@@ -116,9 +120,12 @@ and what resources were given to it by the scheduler.
 The script ultimately generates 1,000 random numbers using the Rscript interface
 to R.
 
-See `./examples/ex1/`.
+```
+cd ./examples/ex1/
+qsub ex1.pbs
+```
 
-## Example 2: Example 1 + an R script
+##### Example 2: Example 1 + an external R script
 
 This PBS script includes all the reasonable defaults from Example 1. The only
 change is that it uses Rscript to run an external R script, which is how the job
@@ -127,9 +134,12 @@ would usually be programmed.
 The computational task in R is a copy of the example usage of `ideal()` from the R
 package **pscl**.
 
-See ``./examples/ex2/``.
+```
+cd ./examples/ex2/
+qsub ex2.pbs
+```
 
-## Example 3: Example 2 + parallel execution + passing arguments to R
+##### Example 3: Example 2 + parallel execution + passing arguments to R
 
 This PBS script uses the sample reasonable defaults from above, but it requests
 two processors on the node. We define the environmental variable `TOTALPROCS` and
@@ -143,22 +153,28 @@ passed to R (i.e. 8). The next set of commands are reading the environmental
 variable `TOTALPROCS`. We then set up the MPI backend and as each of our MPI
 workers to tell us where they are running.
 
-See `./examples/ex3/`.
+```
+cd ./examples/ex3/
+qsub ex3.pbs
+```
 
-## Example 4: Example 2 + job arrays + passing arguments to R
+##### Example 4: Example 2 + job arrays + passing arguments to R
 
 This PBS script now requests an array of jobs based on the template. For jobs in
 this array (indexed from 1 to 3), the shell script will run given the requested
 resources. Because the log file depends on the job ID, each of the three jobs
-will generated different log.* output. Because we R can read the environmental
+will generated different log.* output. Because R can read the environmental
 variable `PBS_ARRAYID`, we are able to use the index on an object of interest to
 us in R (e.g., a vector of names of files in a directory to be processed).
 
 With this setup, each sub-job is requesting the same resources.
 
-See `./examples/ex4/`.
+```
+cd ./examples/ex4/
+qsub ex4.pbs
+```
 
-## Example 5: single-node Matlab parallel execution
+##### Example 5: single-node Matlab parallel execution
 
 This PBS script uses the default setup (see ex1), requests 5 processors on a
 single node, and runs a Matlab script. The Matlab script executes a loop
@@ -167,15 +183,25 @@ seconds by construction. The parallel loop (i.e., the one using the `parfor`
 construct) should be about `PROCS` times faster. This approach does not
 generalize to multiple nodes.
 
+```
+cd ./examples/ex5/
+qsub ex5.pbs
+```
+
 ## Example 6: "Substantive" Example
 
 This example is less a demonstration of features available (e.g., there is no
 use of job arrays or command line arguments) and, instead, shows a computational
 job that provides a good template for many other embarrassingly parallel
 computational tasks. Here, the goal is use the non-parametric bootstrap to
-approximate sampling distribution of correlation coefficients based on samples
-of size 25. The correlation of interest is between average undergraduate GPA and
-average LSAT scores among students at 82 different law schools.
+approximate the sampling distribution of correlation coefficients based on
+samples of size 25. The correlation of interest is between average undergraduate
+GPA and average LSAT scores among students at 82 different law schools.
 
 The output generated from the R script is just the deciles from this
 distribution (without acceleration or bias-correction).
+
+```
+cd ./examples/ex6/
+qsub ex6.pbs
+```
