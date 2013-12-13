@@ -1,6 +1,5 @@
 # TIGRESS-scripts
-
-# Setup and Example scripts for R-based HPC at Princeton University
+Setup and Example scripts for R-based HPC at Princeton University
 
 Contact Jonathan Olmsted (jolmsted@princeton.edu) with questions or issues.
 
