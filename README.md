@@ -204,3 +204,7 @@ distribution (without acceleration or bias-correction).
 cd ./examples/ex6/
 qsub ex6.pbs
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/olmjo/tigress-scripts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
