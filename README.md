@@ -26,6 +26,12 @@ installed.
 
 ### Using
 
+Start by navigating into the repository directory:
+
+```
+cd tigress-scripts
+```
+
 #### Setup and Test Scripts
 For all of the example scripts to work, the shell environment needs to be set up
 correctly and particular R packages need to be installed. The helper setup
