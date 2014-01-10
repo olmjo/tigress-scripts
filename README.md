@@ -223,29 +223,62 @@ cd ./examples/ex7/
 qsub ex7.pbs
 ```
 
+##### Example 8: single-node Python parallel execution
+
+This PBS script uses the default setup (see Example 1), requests 5 processors on
+a single node, and runs a Python script. The Python script executes a loop
+sequentially and then does the equivalent in parallel. Eeach of `MC` iterations
+takes `MC/DUR` seconds by construction. The `map`-based parallel evaluation
+should be about `PROCS` times faster. This approach does not generalize to
+multiple nodes.
+
+```
+cd ./examples/ex8/
+qsub ex8.pbs
+```
+
 #### Index of Topics
-- Batch execution of R scripts via Torque:
+- Common Torque directives: [1](https://github.com/olmjo/tigress-scripts/tree/master#example-1-a-reasonable-default)
+- Batch execution of scripts via Torque
+  - in R:
   [2](https://github.com/olmjo/tigress-scripts/tree/master#example-2-example-1--an-external-r-script)
-- Batch execution of Matlab scripts via Torque:
+  - in Matlab:
   [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
+  - in Python:
+  [8](https://github.com/olmjo/tigress-scripts#example-8-single-node-python-parallel-execution)
 - Misc. shell commands in PBS scripts:
-  [1](https://github.com/olmjo/tigress-scripts/tree/master#example-1-a-reasonable-default)
+[1](https://github.com/olmjo/tigress-scripts/tree/master#example-1-a-reasonable-default)
 - Job arrays:
-  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
-- Passing command line arguments to R:
+[4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
+- Passing command line arguments
+  - in  R: 
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
 - Reading shell environmental variables:
-  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
-  [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution), 
+  - in R:
+  [3](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r),
   [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-multiple-nodes), 
   [7](https://github.com/olmjo/tigress-scripts/tree/master#example-7-substantive-example-with-multiple-cores-on-a-single-node)
+  - in Matlab:
+  [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
+  - in Python:
+  [8](https://github.com/olmjo/tigress-scripts#example-8-single-node-python-parallel-execution)
 - Dynamic parallelization:
-  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
+  [3](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
   [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution), 
-  [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
-- Single-node, multiple-core parallelization in R:
+  [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node),
+  [8](https://github.com/olmjo/tigress-scripts#example-8-single-node-python-parallel-execution)
+- Single-node, multiple-core parallelization
+  - in R: 
   [7](https://github.com/olmjo/tigress-scripts/tree/master#example-7-substantive-example-with-multiple-cores-on-a-single-node)
-- Multiple-node parallelization in R (openmpi):
-  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
-  [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
+  - in Matlab:
+  [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
+  - in Python:
+  [8](https://github.com/olmjo/tigress-scripts#example-8-single-node-python-parallel-execution)
+- Multiple-node parallelization
+  - in R
+    - with openmpi:
+    [3](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
+    [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
+    - with job arrays:
+    [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
   
