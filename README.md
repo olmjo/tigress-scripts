@@ -238,6 +238,7 @@ qsub ex8.pbs
 ```
 
 #### Index of Topics
+- Common Torque directives: [1](https://github.com/olmjo/tigress-scripts/tree/master#example-1-a-reasonable-default)
 - Batch execution of scripts via Torque
   - in R:
   [2](https://github.com/olmjo/tigress-scripts/tree/master#example-2-example-1--an-external-r-script)
@@ -254,7 +255,7 @@ qsub ex8.pbs
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
 - Reading shell environmental variables:
   - in R:
-  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r),
+  [3](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r),
   [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-multiple-nodes), 
   [7](https://github.com/olmjo/tigress-scripts/tree/master#example-7-substantive-example-with-multiple-cores-on-a-single-node)
   - in Matlab:
@@ -276,8 +277,8 @@ qsub ex8.pbs
 - Multiple-node parallelization
   - in R
     - with openmpi:
-    [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
+    [3](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
     [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
-     - with job arrays:
-     [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
+    - with job arrays:
+    [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
   
