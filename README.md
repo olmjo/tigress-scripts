@@ -1,11 +1,13 @@
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/olmjo/tigress-scripts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 # TIGRESS-scripts
-Setup and Example scripts for R-based HPC at Princeton University
+Setup and Example scripts (mostly) for R-based HPC at Princeton University
 
 Contact Jonathan Olmsted (jolmsted@princeton.edu) with questions or issues.
 
 ## What?
 
-This project comprises a set of 6 examples scripts and a setup script to help
+This project comprises a set of multiple example scripts and a setup script to help
 prepare your HPC environment for R-based HPC. These scripts work *out of the
 box* on both Tukey and Della. More information on these scripts is below.
 
@@ -246,12 +248,4 @@ qsub ex7.pbs
 - Multiple-node parallelization in R (openmpi):
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
   [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
-
-
-
-
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/olmjo/tigress-scripts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+  
