@@ -223,11 +223,27 @@ cd ./examples/ex7/
 qsub ex7.pbs
 ```
 
+##### Example 8: single-node Python parallel execution
+
+This PBS script uses the default setup (see Example 1), requests 5 processors on
+a single node, and runs a Python script. The Python script executes a loop
+sequentially and then does the equivalent in parallel. Eeach of `MC` iterations
+takes `MC/DUR` seconds by construction. The `map`-based parallel evaluation
+should be about `PROCS` times faster. This approach does not generalize to
+multiple nodes.
+
+```
+cd ./examples/ex8/
+qsub ex8.pbs
+```
+
 #### Index of Topics
 - Batch execution of R scripts via Torque:
   [2](https://github.com/olmjo/tigress-scripts/tree/master#example-2-example-1--an-external-r-script)
 - Batch execution of Matlab scripts via Torque:
   [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
+- Batch execution of Python scripts via Torque:
+  
 - Misc. shell commands in PBS scripts:
   [1](https://github.com/olmjo/tigress-scripts/tree/master#example-1-a-reasonable-default)
 - Job arrays:
