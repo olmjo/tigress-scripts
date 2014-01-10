@@ -193,7 +193,7 @@ cd ./examples/ex5/
 qsub ex5.pbs
 ```
 
-##### Example 6: "Substantive" Example
+##### Example 6: "Substantive" Example with multiple Cores on Multiple Nodes
 
 This example is less a demonstration of features available (e.g., there is no
 use of job arrays or command line arguments) and, instead, shows a computational
@@ -210,6 +210,36 @@ distribution (without acceleration or bias-correction).
 cd ./examples/ex6/
 qsub ex6.pbs
 ```
+
+##### Example 6: "Substantive" Example with Multiple Cores on a Single Node
+
+This example mirrors Example 6 closely. However, 
+The output generated from the R script is just the deciles from this
+distribution (without acceleration or bias-correction).
+
+```
+cd ./examples/ex6/
+qsub ex6.pbs
+```
+
+#### Index of Topics
+- Batch execution of R scripts via Torque
+
+- Batch execution of Matlab scripts via Torque
+
+- Misc. shell commands in PBS scripts
+
+- Torque Job Arrays
+
+- Reading shell environmental variables from R
+
+- Dynamic parallelization in R
+
+- Single-node, multiple-core parallelization in R
+
+- Multiple-node parallelization in R (openmpi)
+
+
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/olmjo/tigress-scripts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

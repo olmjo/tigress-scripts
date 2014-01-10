@@ -1,6 +1,6 @@
-#PBS -l nodes=2:ppn=2
+#PBS -l nodes=1:ppn=4
 #PBS -l walltime=00:10:00
-#PBS -N Ex6
+#PBS -N Ex7
 #PBS -j oe
 #PBS -o log.${PBS_JOBID}
 #PBS -m abe 
@@ -18,4 +18,4 @@ echo -e '\n\n'
 
 module load openmpi/gcc/1.4.5/64 
 
-mpiexec -np 1 -hostfile $PBS_NODEFILE Rscript ./ex6.R
+mpiexec -np 1 -hostfile $PBS_NODEFILE Rscript ./ex7.R
