@@ -193,7 +193,7 @@ cd ./examples/ex5/
 qsub ex5.pbs
 ```
 
-##### Example 6: "Substantive" Example with multiple Cores on Multiple Nodes
+##### Example 6: "Substantive" Example with Multiple Cores on Multiple Nodes
 
 This example is less a demonstration of features available (e.g., there is no
 use of job arrays or command line arguments) and, instead, shows a computational
@@ -211,27 +211,37 @@ cd ./examples/ex6/
 qsub ex6.pbs
 ```
 
-##### Example 6: "Substantive" Example with Multiple Cores on a Single Node
+##### Example 7: "Substantive" Example with Multiple Cores on a Single Node
 
-This example mirrors Example 6 closely. However, 
-The output generated from the R script is just the deciles from this
-distribution (without acceleration or bias-correction).
+This example mirrors Example 6. However, it demonstrates use of multiple R
+processes on a single node.
 
 ```
-cd ./examples/ex6/
-qsub ex6.pbs
+cd ./examples/ex7/
+qsub ex7.pbs
 ```
 
 #### Index of Topics
-- Batch execution of R scripts via Torque
+- Batch execution of R scripts via Torque:
+  [2](https://github.com/olmjo/tigress-scripts/tree/master#example-2-example-1--an-external-r-script)
 
-- Batch execution of Matlab scripts via Torque
+- Batch execution of Matlab scripts via Torque:
+  [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
 
-- Misc. shell commands in PBS scripts
+- Misc. shell commands in PBS scripts:
+  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r) 
+  [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
 
-- Torque Job Arrays
+- Job arrays:
+  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
 
-- Reading shell environmental variables from R
+- Passing command line arguments to R:
+  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
+
+- Reading shell environmental variables from R:
+  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r) 
+  [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
+  [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
 
 - Dynamic parallelization in R
 
