@@ -263,7 +263,7 @@ qsub ex8.pbs
   - in Python:
   [8](https://github.com/olmjo/tigress-scripts#example-8-single-node-python-parallel-execution)
 - Dynamic parallelization:
-  [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
+  [3](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
   [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution), 
   [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node),
   [8](https://github.com/olmjo/tigress-scripts#example-8-single-node-python-parallel-execution)
