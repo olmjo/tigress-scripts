@@ -1,0 +1,18 @@
+#PBS -l nodes=1:ppn=5
+#PBS -l walltime=00:05:00
+#PBS -N PythonEx
+#PBS -j oe
+#PBS -o log.${PBS_JOBID}
+
+echo '-------------------------------'
+cd $PBS_O_WORKDIR
+echo $PBS_O_WORKDIR
+echo Running on host $(hostname)
+echo Time is $(date)
+echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
+echo '-------------------------------'
+echo -e '\n\n'
+
+export PROCS=`cat $PBS_NODEFILE|wc -l`
+
+python ex8.py
