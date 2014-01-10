@@ -224,33 +224,25 @@ qsub ex7.pbs
 #### Index of Topics
 - Batch execution of R scripts via Torque:
   [2](https://github.com/olmjo/tigress-scripts/tree/master#example-2-example-1--an-external-r-script)
-
 - Batch execution of Matlab scripts via Torque:
   [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution)
-
 - Misc. shell commands in PBS scripts:
   [1](https://github.com/olmjo/tigress-scripts/tree/master#example-1-a-reasonable-default)
-
 - Job arrays:
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
-
 - Passing command line arguments to R:
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-4-example-2--job-arrays--passing-arguments-to-r)
-
 - Reading shell environmental variables:
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
   [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution), 
   [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-multiple-nodes), 
   [7](https://github.com/olmjo/tigress-scripts/tree/master#example-7-substantive-example-with-multiple-cores-on-a-single-node)
-
 - Dynamic parallelization:
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
   [5](https://github.com/olmjo/tigress-scripts/tree/master#example-5-single-node-matlab-parallel-execution), 
   [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
-
 - Single-node, multiple-core parallelization in R:
   [7](https://github.com/olmjo/tigress-scripts/tree/master#example-7-substantive-example-with-multiple-cores-on-a-single-node)
-
 - Multiple-node parallelization in R (openmpi):
   [4](https://github.com/olmjo/tigress-scripts/tree/master#example-3-example-2--parallel-execution--passing-arguments-to-r), 
   [6](https://github.com/olmjo/tigress-scripts/tree/master#example-6-substantive-example-with-multiple-cores-on-a-single-node)
