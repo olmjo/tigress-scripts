@@ -13,7 +13,7 @@ echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
 echo '-------------------------------'
 echo -e '\n\n'
 
-EXEC=/usr/licensed/bin/matlab-R2013a
+EXEC=/usr/licensed/bin/matlab
 OPTS1=' -nodisplay -nosplash '
 OPTS2=' -singleCompThread '
 
