@@ -17,8 +17,6 @@ EXEC=/usr/licensed/bin/matlab
 OPTS1=' -nodisplay -nosplash -nojvm'
 OPTS2=' -singleCompThread '
 
-export PROCS=`cat $PBS_NODEFILE|wc -l`
-
 ${EXEC}${OPTS1} < ex11.m
 ${EXEC}${OPTS1} < ex11.m
 
