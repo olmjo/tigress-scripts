@@ -1,0 +1,26 @@
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=00:05:00
+#PBS -N Ex11
+#PBS -j oe
+#PBS -o log.${PBS_JOBID}
+
+echo '-------------------------------'
+cd $PBS_O_WORKDIR
+echo $PBS_O_WORKDIR
+echo Running on host $(hostname)
+echo Time is $(date)
+echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
+echo '-------------------------------'
+echo -e '\n\n'
+
+EXEC=/usr/licensed/bin/matlab-R2013a
+OPTS1=' -nodisplay -nosplash '
+OPTS2=' -singleCompThread '
+
+export PROCS=`cat $PBS_NODEFILE|wc -l`
+
+${EXEC}${OPTS1} < ex11.m
+${EXEC}${OPTS1} < ex11.m
+
+${EXEC}${OPTS1}${OPTS2} < ex11.m
+${EXEC}${OPTS1}${OPTS2} < ex11.m
