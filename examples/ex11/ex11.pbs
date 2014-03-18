@@ -1,5 +1,5 @@
-#PBS -l nodes=1:ppn=8
-#PBS -l walltime=00:05:00
+#PBS -l nodes=1:ppn=12
+#PBS -l walltime=00:10:00
 #PBS -N Ex11
 #PBS -j oe
 #PBS -o log.${PBS_JOBID}
@@ -17,8 +17,8 @@ EXEC=/usr/licensed/bin/matlab
 OPTS1=' -nodisplay -nosplash -nojvm'
 OPTS2=' -singleCompThread '
 
-${EXEC}${OPTS1} < ex11.m
-${EXEC}${OPTS1} < ex11.m
+${EXEC}${OPTS1} -r "ex11"
+${EXEC}${OPTS1} -r "ex11"
 
-${EXEC}${OPTS1}${OPTS2} < ex11.m
-${EXEC}${OPTS1}${OPTS2} < ex11.m
+${EXEC}${OPTS1}${OPTS2} -r "ex11"
+${EXEC}${OPTS1}${OPTS2} -r "ex11"
