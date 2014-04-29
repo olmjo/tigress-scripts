@@ -119,13 +119,20 @@ This is a bare bones example. It requests 1 node with 1 processor on the
 node. It allows the scheduler to kill the job after 10 minutes. The script
 simply generates 1,000 random numbers using the Rscript interface to R.
 
-To run:
+To run under PBS:
 ```
 cd ./examples/ex0/
 qsub ex0.pbs
 ```
 
+To run under SLURM:
+```
+cd ./examples/ex0/
+sbatch ex0.slurm
+```
+
 ##### Example 1: A Reasonable Default
+*PBS*, *SLURM*
 
 This PBS script represents a reasonable starting point for simple jobs. It is
 more explicit about how the job should be managed than Example 0. It still
@@ -142,12 +149,20 @@ and what resources were given to it by the scheduler.
 The script ultimately generates 1,000 random numbers using the Rscript interface
 to R.
 
+To run under PBS:
 ```
 cd ./examples/ex1/
 qsub ex1.pbs
 ```
 
+To run under SLURM:
+```
+cd ./examples/ex1/
+sbatch ex1.slurm
+```
+
 ##### Example 2: Example 1 + an external R script
+*PBS*
 
 This PBS script includes all the reasonable defaults from Example 1. The only
 change is that it uses Rscript to run an external R script, which is how the job
@@ -211,6 +226,7 @@ qsub ex5.pbs
 ```
 
 ##### Example 6: "Substantive" Example with Multiple Cores on Multiple Nodes
+*PBS*
 
 This example is less a demonstration of features available (e.g., there is no
 use of job arrays or command line arguments) and, instead, shows a computational
@@ -229,6 +245,7 @@ qsub ex6.pbs
 ```
 
 ##### Example 7: "Substantive" Example with Multiple Cores on a Single Node
+*PBS*
 
 This example mirrors Example 6. However, it demonstrates use of multiple R
 processes on a single node.
@@ -239,6 +256,7 @@ qsub ex7.pbs
 ```
 
 ##### Example 8: single-node Python parallel execution
+*PBS*
 
 This PBS script uses the default setup (see Example 1), requests 5 processors on
 a single node, and runs a Python script. The Python script executes a loop
@@ -251,6 +269,27 @@ multiple nodes.
 cd ./examples/ex8/
 qsub ex8.pbs
 ```
+
+##### Example 9: single-node Python parallel execution through arrays
+*PBS*
+
+This PBS script uses the default setup (see Example 1), requests 5 processors on
+a single node, and runs a Python script. The Python script executes a loop
+sequentially and then does the equivalent in parallel. Eeach of `MC` iterations
+takes `MC/DUR` seconds by construction. The `map`-based parallel evaluation
+should be about `PROCS` times faster. This approach does not generalize to
+multiple nodes.
+
+```
+cd ./examples/ex8/
+qsub ex8.pbs
+```
+
+##### Example 10: single-node non-parallel R job with Rcpp
+*PBS*
+
+##### Example 11: single-node Computational Thread illustration with Matlab
+*PBS*
 
 
 #### Index of Topics
