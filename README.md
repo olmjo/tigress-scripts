@@ -7,9 +7,22 @@ Contact Jonathan Olmsted (jolmsted@princeton.edu) with questions or issues.
 
 ## What?
 
-This project comprises a set of multiple example scripts and a setup script to help
-prepare your HPC environment for R-based HPC. These scripts work *out of the
-box* on both Tukey and Della. More information on these scripts is below.
+This project comprises a set of multiple example scripts and a setup script to
+help prepare your HPC environment for R-based HPC. These scripts work *out of
+the box* on both Tukey and Della. There are some additional examples of using
+Python and Matlab, but these are not the focus.  More information on these
+scripts is below.
+
+## Where?
+
+These scripts have been tested on:
+- Tukey
+- Della 3
+- Della 4
+- Adroit
+
+If you are using one of these systems and something isn't working, please email
+for support.
 
 ## How?
 
@@ -88,17 +101,19 @@ librdmacm: Fatal: no RDMA devices found
 
 #### Examples
 
-There are a total of six sets of example scripts in this project. Each set can
-be used to submit a perfectly valid job on (at least) Della and Tukey. They are
-located in the `./examples/` subdirectory. The shell scripts with a `.pbs`
-suffix are PBS scripts for the resource manager. These represent a complete
-description of what resources you need and what steps you need the computing to
-perform for you. The scripts with a `.R` suffix are R scripts that represent our
-computational jobs. The fifth example is for Matlab, and the `.m` script is our
-computational job. The concepts and features demonstrated here should cover
-nearly all usage.
+There are a number of example scripts in this project. Each set can be used to
+submit a perfectly valid job on the above listed systems. They are located in
+the `./examples/` subdirectory. The shell scripts with a `.pbs` suffix are PBS
+scripts for the TORQUE resource manager. The shell scripts with a `.slurm` suffix are
+SLURM scripts.
+
+In each examples description, below, version for PBS and SLURM are indicated.
+
+Currently, only Della 4 uses SLURM. PBS scripts will work elsewhere.
+
 
 ##### Example 0: Bare Bones
+*PBS*, *SLURM*
 
 This is a bare bones example. It requests 1 node with 1 processor on the
 node. It allows the scheduler to kill the job after 10 minutes. The script
