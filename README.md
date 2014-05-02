@@ -162,7 +162,7 @@ sbatch ex1.slurm
 ```
 
 ##### Example 2: Example 1 + an external R script
-*PBS*
+*PBS*, *SLURM*
 
 This PBS script includes all the reasonable defaults from Example 1. The only
 change is that it uses Rscript to run an external R script, which is how the job
@@ -171,9 +171,16 @@ would usually be programmed.
 The computational task in R is a copy of the example usage of `ideal()` from the R
 package **pscl**.
 
+To run under PBS:
 ```
 cd ./examples/ex2/
 qsub ex2.pbs
+```
+
+To run under SLURM:
+```
+cd ./examples/ex2/
+sbatch ex2.slurm
 ```
 
 ##### Example 3: Example 2 + parallel execution + passing arguments to R
@@ -190,9 +197,16 @@ passed to R (i.e. 8). The next set of commands are reading the environmental
 variable `TOTALPROCS`. We then set up the MPI backend and as each of our MPI
 workers to tell us where they are running.
 
+To run under PBS:
 ```
 cd ./examples/ex3/
 qsub ex3.pbs
+```
+
+To run under SLURM:
+```
+cd ./examples/ex3/
+sbatch ex3.slurm
 ```
 
 ##### Example 4: Example 2 + job arrays + passing arguments to R
