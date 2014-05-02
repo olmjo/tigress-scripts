@@ -7,26 +7,19 @@ paste("nIters:", nIters)
                                         #
                                         #
 
-### #################
-### Read Env Variable
-### #################
-nMPISIZE <- Sys.getenv("TOTALPROCS")
-paste("nMPISZE:", nMPISIZE)
-                                        #
-                                        #
-
 ### ############
 ### Dependencies
 ### ############
 library(foreach)
 library(doMPI)
+
                                         #
                                         #
 
 ### ################
 ### Init MPI Backend
 ### ################
-cl <- startMPIcluster(nMPISIZE)
+cl <- startMPIcluster()
 registerDoMPI(cl)
                                         #
                                         #
@@ -42,18 +35,33 @@ Sys.getpid()
 ### ########################
 ### Main Loop over MPI Procs
 ### ########################
-foreach(i = (1:nIters),
-        .combine = rbind
-        ) %dopar% {
-          return(data.frame(
-            host = mpi.get.processor.name(),
-            pid = Sys.getpid(),
-            size = mpi.comm.size(),
-            rank = mpi.comm.rank()
-            )
-                 )
-        }
+
+system.time({
+    out <- foreach(i = (1:nIters),
+                   .combine = rbind
+                   ) %dopar% {
+                       Sys.sleep(1)
+                       return(data.frame(
+                           host = mpi.get.processor.name(),
+                           pid = Sys.getpid(),
+                           size = mpi.comm.size(0),
+                           rank = mpi.comm.rank(0)
+                           )
+                              )
+                   }
+})
+
+
+out
+
+Sys.getpid()
+mpi.comm.rank(0)
+mpi.comm.size(0)
+mpi.get.processor.name()
+
                                         #
                                         #
+
+
 closeCluster(cl)
 mpi.quit()
