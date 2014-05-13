@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=4
 #SBATCH -t 10:00
@@ -16,6 +16,6 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-module load openmpi/gcc/1.6.5/
+module load openmpi/gcc/
 
 srun Rscript ./ex3.R 10
