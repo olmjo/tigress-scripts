@@ -101,13 +101,13 @@ librdmacm: Fatal: no RDMA devices found
 
 #### Examples
 
-There are a number of example scripts in this project. Each set can be used to
-submit a perfectly valid job on the above listed systems. They are located in
+There are a series of example scripts in this project. Each example can be used
+to submit a perfectly valid job on the above listed systems. They are located in
 the `./examples/` subdirectory. The shell scripts with a `.pbs` suffix are PBS
-scripts for the TORQUE resource manager. The shell scripts with a `.slurm` suffix are
-SLURM scripts.
+scripts for the TORQUE resource manager. The shell scripts with a `.slurm`
+suffix are SLURM scripts.
 
-In each examples description, below, version for PBS and SLURM are indicated.
+In each example description, below, versions for PBS and SLURM are indicated.
 
 Currently, only Della 4 uses SLURM. PBS scripts will work elsewhere.
 
@@ -184,18 +184,14 @@ sbatch ex2.slurm
 ```
 
 ##### Example 3: Example 2 + parallel execution + passing arguments to R
+*PBS*, *SLURM*
 
-This PBS script uses the sample reasonable defaults from above, but it requests
-two processors on the node. We define the environmental variable `TOTALPROCS` and
-make sure it is available to processes started in this script (via export). Now
-Rscript has to be invoked from within the mpiexec command. The master MPI
-process knows what resources were allocated from `-hostfile
-$PBS_NODEFILE`. Lastly, our R script is taking a final unnamed argument of 8.
-
-In the R script, the first set of commands parses the command line argument
-passed to R (i.e. 8). The next set of commands are reading the environmental
-variable `TOTALPROCS`. We then set up the MPI backend and as each of our MPI
-workers to tell us where they are running.
+This job script uses the sample reasonable defaults from above, but it requests
+two nodes with 4 processors each. The R script uses an MPI backend to
+parallelize an R foreach loop across multiple nodes. A total of 2 * 4 = 8
+processors will be used for this job. When running the R script, we pass the
+value "10" as an unnamed argument. The R script then uses this value to
+determine how many iterations of the foreach loop to run.
 
 To run under PBS:
 ```
@@ -211,7 +207,7 @@ sbatch ex3.slurm
 
 ##### Example 4: Example 2 + job arrays + passing arguments to R
 
-This PBS script now requests an array of jobs based on the template. For jobs in
+This script now requests an array of jobs based on the template. For jobs in
 this array (indexed from 1 to 3), the shell script will run given the requested
 resources. Because the log file depends on the job ID, each of the three jobs
 will generated different log.* output. Because R can read the environmental

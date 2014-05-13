@@ -1,11 +1,10 @@
-#PBS -l nodes=2:ppn=2
+#!/bin/sh
+#PBS -l nodes=2:ppn=4
 #PBS -l walltime=00:10:00
 #PBS -N Ex3
 #PBS -j oe
 #PBS -o log.${PBS_JOBID}
 #PBS -m abe 
-
-export TOTALPROCS=`cat $PBS_NODEFILE|wc -l`
 
 echo '-------------------------------'
 cd $PBS_O_WORKDIR
@@ -18,4 +17,4 @@ echo -e '\n\n'
 
 module load openmpi/gcc/1.6.5/ 
 
-mpirun Rscript ./ex3.R 8
+mpirun Rscript ./ex3.R 10

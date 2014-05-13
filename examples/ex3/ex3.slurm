@@ -16,8 +16,6 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-echo ${SLURM_NODELIST}
-
-module load openmpi/gcc/1.6.5/64
+module load openmpi/gcc/1.6.5/
 
 srun Rscript ./ex3.R 10
