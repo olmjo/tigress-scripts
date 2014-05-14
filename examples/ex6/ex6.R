@@ -13,19 +13,10 @@
 ## Parallelization: MPI Backend and a foreach() loop
 
 
-
-
-## #################
-## Read Env Variable
-## #################
-nMPISIZE <- Sys.getenv("TOTALPROCS")
-                                        #
-                                        # Auto detects resources granted from
-                                        # the job manager
-
 ## ############
 ## Dependencies
 ## ############
+
 library(foreach)
 library(doMPI)
 library(doRNG)
@@ -40,7 +31,7 @@ library(bootstrap)
 ## ################
 ## Init MPI Backend
 ## ################
-cl <- startMPIcluster(nMPISIZE)
+cl <- startMPIcluster()
 registerDoMPI(cl)
 
                                         #

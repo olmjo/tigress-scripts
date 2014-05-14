@@ -5,8 +5,6 @@
 #PBS -o log.${PBS_JOBID}
 #PBS -m abe 
 
-export TOTALPROCS=`cat $PBS_NODEFILE|wc -l`
-
 echo '-------------------------------'
 cd $PBS_O_WORKDIR
 echo $PBS_O_WORKDIR
@@ -16,6 +14,4 @@ echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
 echo '-------------------------------'
 echo -e '\n\n'
 
-module load openmpi/gcc/1.4.5/64 
-
-mpiexec -np 1 -hostfile $PBS_NODEFILE Rscript ./ex6.R
+mpiexec Rscript ./ex6.R

@@ -209,22 +209,31 @@ sbatch ex3.slurm
 ```
 
 ##### Example 4: Example 2 + job arrays + passing arguments to R
+*PBS*, *SLURM*
 
 This script now requests an array of jobs based on the template. For jobs in
 this array (indexed from 1 to 3), the shell script will run given the requested
 resources. Because the log file depends on the job ID, each of the three jobs
-will generated different log.* output. Because R can read the environmental
-variable `PBS_ARRAYID`, we are able to use the index on an object of interest to
-us in R (e.g., a vector of names of files in a directory to be processed).
+will generated different log.* output. Because R can read environmental
+variables we are able to use the index on an object of interest to us in R
+(e.g., a vector of names of files in a directory to be processed).
 
 With this setup, each sub-job is requesting the same resources.
 
+To run under PBS:
 ```
 cd ./examples/ex4/
 qsub ex4.pbs
 ```
 
+To run under SLURM:
+```
+cd ./examples/ex4/
+sbatch ex4.slurm
+```
+
 ##### Example 5: single-node Matlab parallel execution
+*PBS*
 
 This PBS script uses the default setup (see ex1), requests 5 processors on a
 single node, and runs a Matlab script. The Matlab script executes a loop
@@ -239,7 +248,7 @@ qsub ex5.pbs
 ```
 
 ##### Example 6: "Substantive" Example with Multiple Cores on Multiple Nodes
-*PBS*
+*PBS*, *SLURM*
 
 This example is less a demonstration of features available (e.g., there is no
 use of job arrays or command line arguments) and, instead, shows a computational
@@ -252,9 +261,16 @@ GPA and average LSAT scores among students at 82 different law schools.
 The output generated from the R script is just the deciles from this
 distribution (without acceleration or bias-correction).
 
+To run under PBS:
 ```
 cd ./examples/ex6/
 qsub ex6.pbs
+```
+
+To run under SLURM:
+```
+cd ./examples/ex6/
+sbatch ex6.slurm
 ```
 
 ##### Example 7: "Substantive" Example with Multiple Cores on a Single Node
