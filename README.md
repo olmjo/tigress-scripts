@@ -19,7 +19,6 @@ These scripts have been tested on:
 - Tukey
 - Della 3
 - Della 4
-- Adroit
 
 If you are using one of these systems and something isn't working, please email
 for support.
@@ -188,10 +187,14 @@ sbatch ex2.slurm
 
 This job script uses the sample reasonable defaults from above, but it requests
 two nodes with 4 processors each. The R script uses an MPI backend to
-parallelize an R foreach loop across multiple nodes. A total of 2 * 4 = 8
+parallelize an R foreach loop across multiple nodes. A total of 2 * 2 = 4
 processors will be used for this job. When running the R script, we pass the
 value "10" as an unnamed argument. The R script then uses this value to
 determine how many iterations of the foreach loop to run.
+
+Each iteration of the foreach loop simply pauses for 1 second and then returns
+some contextual information in a dataframe. This information includes where that
+MPI process is running and what it's "id" is.
 
 To run under PBS:
 ```
