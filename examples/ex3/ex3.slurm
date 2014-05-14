@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=4
 #SBATCH -t 10:00
