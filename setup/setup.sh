@@ -181,7 +181,8 @@ while true; do
 @ Do you need to install misc. HPC R packages?
 [y/n]" yn
     case $yn in
-        [Yy]* )            
+        [Yy]* )          
+            source ~/.bashrc
             Rscript install_misc.R;
             break;;
         [Nn]* )
