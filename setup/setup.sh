@@ -41,10 +41,13 @@ while true; do
         [Yy]* )
             if [ "${LOCATION}" == "tukey" ]
             then 
-                echo "tukey"
                 break
             fi
-            echo -e "module load rh\n" >> ~/.bashrc; ## for new gcc suite
+            if [ "${LOCATION}" == "della4" ]
+            then 
+                echo -e "module load rh\n" >> ~/.bashrc; ## for new gcc suite
+                break
+            fi            
             source ~/.bashrc
             break
             ;;
@@ -80,6 +83,9 @@ case ${LOCATION} in
         ;;
     adroit.Princeton.EDU)
         export OMPIVERS=1.3.0
+        ;;
+    adroit3)
+        export OMPIVERS=1.6.5
         ;;
     *)
         export OMPIVERS=1.4.5
