@@ -19,6 +19,7 @@ These scripts have been tested on:
 - Tukey
 - Della 3
 - Della 4
+- Adroit 3
 
 If you are using one of these systems and something isn't working, please email
 for support.
@@ -59,10 +60,28 @@ cd setup
 You will be prompted by several questions like
 
 ```
-Do you need to DL Rmpi? [y/n]
-Do you need to add openmpi libs to the linker path? [y/n]
-Do you need to install Rmpi? [y/n]
-Do you need to misc. HPC packages? [y/n]n
+@ Do you want to set up your account to use an updated compiler version?
+    Note 1: may be necessary for some R packages
+    Note 2: only needs to be done once per system
+    Note 3: may have no effect on certain machines
+[y/n]
+
+@ Do you need to DL Rmpi?
+[y/n]
+
+
+@ Do you need to add OpenMPI support?
+    Note: needs to only be added once
+[y/n]
+
+
+@ Do you need to install Rmpi?
+[y/n]
+
+
+@ Do you need to install misc. HPC R packages?
+[y/n]
+
 ```
 
 If you've never run this before, answer "y" to each question.
