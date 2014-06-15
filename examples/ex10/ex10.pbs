@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=00:05:00
 #PBS -N Ex10
@@ -14,4 +15,4 @@ echo PBS_NODEFILE is $(cat $PBS_NODEFILE)
 echo '-------------------------------'
 echo -e '\n\n'
 
-Rscript ex10.R
+Rscript ./ex10.R
