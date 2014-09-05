@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=00:10:00
 #PBS -N Ex1
 #PBS -j oe
 #PBS -o log.${PBS_JOBID}
-#PBS -m abe 
+#PBS -m abe
 
 echo '-------------------------------'
 cd $PBS_O_WORKDIR
