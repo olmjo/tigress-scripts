@@ -9,7 +9,7 @@ Contact Jonathan Olmsted (jolmsted@princeton.edu) with questions or issues.
 
 This project comprises a set of multiple example scripts and a setup script to
 help prepare your HPC environment for R-based HPC. These scripts work *out of
-the box* on both Tukey and Della. There are some additional examples of using
+the box* on Tukey, Della, and Adroit. There are some additional examples of using
 Python and Matlab, but these are not the focus.  More information on these
 scripts is below.
 
@@ -17,9 +17,8 @@ scripts is below.
 
 These scripts have been tested on:
 - Tukey
-- Della 3
-- Della 4
-- Adroit 3
+- Della
+- Adroit
 
 If you are using one of these systems and something isn't working, please email
 for support.
@@ -29,7 +28,7 @@ for support.
 ### Getting a Copy
 
 You can create a full copy of this git repository by cloning it. To do this, run
-the following at the shell prompt:
+the following at the shell prompt from one of these systems:
 
 ```
 git clone https://github.com/olmjo/tigress-scripts
