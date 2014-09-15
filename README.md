@@ -98,24 +98,6 @@ Process 2 on tukey out of 3
 Process 0 on tukey out of 3
 ```
 
-If you see information like the following mixed in, that's okay.
-
-```
-librdmacm: Fatal: no RDMA devices found
---------------------------------------------------------------------------
-[[20318,1],0]: A high-performance Open MPI point-to-point messaging module
-was unable to find any relevant network interfaces:
-
-Module: OpenFabrics (openib)
-  Host: tukey
-
-Another transport will be used instead, although this may result in
-lower performance.
---------------------------------------------------------------------------
-librdmacm: Fatal: no RDMA devices found
-librdmacm: Fatal: no RDMA devices found
-```
-
 #### Examples
 
 There are a series of example scripts in this project. Each example can be used
@@ -369,4 +351,3 @@ qsub ex8.pbs
   - in R
     - with openmpi: Examples 3, 6
     - with job arrays: Example 4
-  
