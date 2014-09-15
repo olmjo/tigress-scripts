@@ -56,6 +56,11 @@ cd setup
 ./setup.sh
 ```
 
+**Warning:** If you have never used R on these machines before, you start first
+  start R, install any package at all, and then quit R before
+  proceeding. Without having installed any R package in this way, the subsequent
+  setup scripts won't work.
+
 You will be prompted by several questions like
 
 ```
