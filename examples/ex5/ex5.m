@@ -1,6 +1,6 @@
 MC = 10 ;
-DUR = 20 ;
-parpool(getenv('PROCS')) ;
+DUR = 30 ;
+parpool('local', str2num(getenv('PROCS'))) ;
 
 tic ;
 for i = 1:MC
