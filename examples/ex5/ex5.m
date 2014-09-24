@@ -1,6 +1,6 @@
 MC = 10 ;
 DUR = 20 ;
-matlabpool(getenv('PROCS')) ;
+parpool(getenv('PROCS')) ;
 
 tic ;
 for i = 1:MC
@@ -17,4 +17,3 @@ pt = toc ;
 disp(pt) ;
 
 exit ;
-
