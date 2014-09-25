@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=2
+
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
 #SBATCH -J Ex6
 #SBATCH -o log.%j

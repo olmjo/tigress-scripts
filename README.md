@@ -108,22 +108,22 @@ Process 0 on tukey out of 3
 There are a series of example scripts in this project. Each example can be used
 to submit a perfectly valid job on the above listed systems. They are located in
 the `./examples/` subdirectory. The shell scripts with a `.pbs` suffix are PBS
-scripts for the TORQUE resource manager. The shell scripts with a `.slurm`
-suffix are SLURM scripts.
+scripts for the Torque resource manager. The shell scripts with a `.slurm`
+suffix are SLURM scripts. PBS scripts are not actively maintained since the
+systems listed above all run SLURM. And, there is no promise that the SLURM and
+PBS versions will always be "in sync".
 
-In each example description, below, versions for PBS and SLURM are indicated.
-
-Currently, only Della 4 uses SLURM. PBS scripts will work elsewhere.
-
+In each example description, below, versions for either PBS, SLURM, or both are
+indicated.
 
 ##### Example 0: Bare Bones
 *PBS*, *SLURM*
 
-This is a bare bones example. It requests 1 node with 1 processor on the
-node. It allows the scheduler to kill the job after 10 minutes. The script
-simply generates 1,000 random numbers using the Rscript interface to R.
+This is a bare bones example. It requests 1 task with 1 processor. It allows the
+scheduler to kill the job after 10 minutes. The script simply generates 1,000
+random numbers using the Rscript interface to R.
 
-To run under PBS:
+To run under Torque:
 ```
 cd ./examples/ex0/
 qsub ex0.pbs
@@ -138,22 +138,22 @@ sbatch ex0.slurm
 ##### Example 1: A Reasonable Default
 *PBS*, *SLURM*
 
-This PBS script represents a reasonable starting point for simple jobs. It is
+This script represents a reasonable starting point for simple jobs. It is
 more explicit about how the job should be managed than Example 0. It still
-requests 1 node with 1 processor. It requests only 10 minutes of time. It uses a
+requests 1 task with 1 processor. It requests only 10 minutes of time. It uses a
 custom name in the queue and has both the error log and the output log merged
 into one file which begins with log.* and has a suffix determined by the job
 ID. It requests emails when it begins, ends, and aborts (the email address can
 be specified manually, but works by default on TIGRESS systems).
 
-Every line beginning with # is just a PBS directive. The remainder comprises an
-actual shell script. The script is verbose about where it is, when it starts,
-and what resources were given to it by the scheduler.
+Every line beginning with # is just a scheduler directive. The remainder
+comprises an actual shell script. The script is verbose about where it is, when
+it starts, and what resources were given to it by the scheduler.
 
 The script ultimately generates 1,000 random numbers using the Rscript interface
 to R.
 
-To run under PBS:
+To run under Torque:
 ```
 cd ./examples/ex1/
 qsub ex1.pbs
@@ -168,14 +168,14 @@ sbatch ex1.slurm
 ##### Example 2: Example 1 + an external R script
 *PBS*, *SLURM*
 
-This PBS script includes all the reasonable defaults from Example 1. The only
+This script includes all the reasonable defaults from Example 1. The only
 change is that it uses Rscript to run an external R script, which is how the job
 would usually be programmed.
 
 The computational task in R is a copy of the example usage of `ideal()` from the R
 package **pscl**.
 
-To run under PBS:
+To run under Torque:
 ```
 cd ./examples/ex2/
 qsub ex2.pbs
@@ -191,9 +191,12 @@ sbatch ex2.slurm
 *PBS*, *SLURM*
 
 This job script uses the sample reasonable defaults from above, but it requests
-two nodes with 4 processors each. The R script uses an MPI backend to
-parallelize an R foreach loop across multiple nodes. A total of 2 * 2 = 4
-processors will be used for this job. When running the R script, we pass the
+3 tasks with 1 processor each. These tasks may land on the same physical
+node, or not.
+
+The R script uses an MPI backend to parallelize an R foreach loop across
+multiple nodes. A total of 3 * 1 = 3 processors will be used for this job (but 1
+task is kept for the "master" process). When running the R script, we pass the
 value "10" as an unnamed argument. The R script then uses this value to
 determine how many iterations of the foreach loop to run.
 
@@ -201,7 +204,7 @@ Each iteration of the foreach loop simply pauses for 1 second and then returns
 some contextual information in a dataframe. This information includes where that
 MPI process is running and what it's "id" is.
 
-To run under PBS:
+To run under Torque:
 ```
 cd ./examples/ex3/
 qsub ex3.pbs
@@ -225,7 +228,7 @@ variables we are able to use the index on an object of interest to us in R
 
 With this setup, each sub-job is requesting the same resources.
 
-To run under PBS:
+To run under Torque:
 ```
 cd ./examples/ex4/
 qsub ex4.pbs
@@ -240,19 +243,19 @@ sbatch ex4.slurm
 ##### Example 5: single-node Matlab parallel execution
 *PBS*
 
-This PBS script uses the default setup (see ex1), requests 5 processors on a
-single node, and runs a Matlab script. The Matlab script executes a loop
+This script uses the default setup (see ex1), requests one task with 5
+processors and runs a Matlab script. The Matlab script executes a loop
 sequentially and then in parallel where each of `MC` iterations takes `MC/DUR`
 seconds by construction. The parallel loop (i.e., the one using the `parfor`
 construct) should be about `PROCS` times faster. This approach does not
-generalize to multiple nodes.
+generalize to parallel execution across nodes.
 
 ```
 cd ./examples/ex5/
 qsub ex5.pbs
 ```
 
-##### Example 6: "Substantive" Example with Multiple Cores on Multiple Nodes
+##### Example 6: "Substantive" Example Supporting Cross-Node Execution
 *PBS*, *SLURM*
 
 This example is less a demonstration of features available (e.g., there is no
@@ -266,7 +269,7 @@ GPA and average LSAT scores among students at 82 different law schools.
 The output generated from the R script is just the deciles from this
 distribution (without acceleration or bias-correction).
 
-To run under PBS:
+To run under Torque:
 ```
 cd ./examples/ex6/
 qsub ex6.pbs
@@ -281,19 +284,19 @@ sbatch ex6.slurm
 ##### Example 7: "Substantive" Example with Multiple Cores on a Single Node
 *PBS*, *SLURM*
 
-This example mirrors Example 6. However, it demonstrates use of multiple R
-processes on a single node.
+This example mirrors Example 6. However, it demonstrates use of a single task,
+where that task uses multiple processes.
 
-To run under PBS:
+To run under Torque:
 ```
-cd ./examples/ex6/
-qsub ex6.pbs
+cd ./examples/ex7/
+qsub ex7.pbs
 ```
 
 To run under SLURM:
 ```
-cd ./examples/ex6/
-sbatch ex6.slurm
+cd ./examples/ex7/
+sbatch ex7.slurm
 ```
 
 ##### Example 8: single-node Python parallel execution

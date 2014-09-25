@@ -17,16 +17,19 @@
 ## Dependencies
 ## ############
 
-library(foreach)
-library(doMPI)
-library(doRNG)
+suppressMessages({
+    library(foreach)
+    library(doMPI)
+    library(doRNG)
                                         #
                                         # Packges needed for the parallelization
 
-library(bootstrap)
+    library(bootstrap)
                                         #
                                         # Packages need for the "substantive"
                                         # example
+}
+                 )
 
 ## ################
 ## Init MPI Backend

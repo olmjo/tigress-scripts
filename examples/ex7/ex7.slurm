@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4
+
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=5
 #SBATCH -t 10:00
 #SBATCH -J Ex7
 #SBATCH -o log.%j
@@ -16,6 +17,6 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-export TOTALPROCS=${SLURM_JOB_CPUS_PER_NODE}
+export TOTALPROCS=${SLURM_CPUS_ON_NODE}
 
 Rscript ./ex7.R

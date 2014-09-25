@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
+
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
 #SBATCH -J Ex4
-#SBATCH -o log.%j
+#SBATCH -o log.%A_%a
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
 #SBATCH --array=1-3

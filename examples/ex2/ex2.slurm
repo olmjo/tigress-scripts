@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
+
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
 #SBATCH -J Ex2
 #SBATCH -o log.%j
@@ -17,4 +18,3 @@ echo '-------------------------------'
 echo -e '\n\n'
 
 Rscript ./ex2.R
-

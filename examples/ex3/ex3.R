@@ -1,6 +1,7 @@
 ### #############
 ### Parse CL Args
 ### #############
+
 args <- commandArgs(trailingOnly = TRUE)
 nIters <- as.integer(args[1])
 paste("nIters:", nIters)
@@ -10,11 +11,13 @@ paste("nIters:", nIters)
 ### ############
 ### Dependencies
 ### ############
+
 library(foreach)
 library(doMPI)
 
                                         #
                                         #
+
 
 ### ################
 ### Init MPI Backend
