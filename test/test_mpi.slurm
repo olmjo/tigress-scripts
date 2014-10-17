@@ -29,7 +29,7 @@ mpic++ hello.c -o tester
 
 ## Run Test Binary
 mpirun -mca btl ^openib ./tester
-srun -mca btl ^openib ./tester
+srun ./tester
 
 ## Remove Test Binary
 rm -f ./tester
