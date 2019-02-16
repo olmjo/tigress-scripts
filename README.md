@@ -1,15 +1,23 @@
-# TIGRESS-scripts
-Setup and Example scripts (mostly) for R-based HPC at Princeton University
+**This repo is not currently maintained, will likely not work "as is"
+for its intendend purpose, and only left available for reference**
 
-Contact Jonathan Olmsted (jolmsted@princeton.edu) with questions or issues.
+*The mainter has no current affiliation with Princeton University.*
+
+# TIGRESS-scripts
+
+Setup and Example scripts (mostly) for R-based HPC at Princeton
+University
+
+Contact Jonathan Olmsted (jpolmsted@gmail.com) with questions or
+issues.
 
 ## What?
 
-This project comprises a set of multiple example scripts and a setup script to
-help prepare your HPC environment for R-based HPC. These scripts work *out of
-the box* on Tukey, Della, and Adroit. There are some additional examples of using
-Python and Matlab, but these are not the focus.  More information on these
-scripts is below.
+This project comprises a set of multiple example scripts and a setup
+script to help prepare your HPC environment for R-based HPC. These
+scripts work *out of the box* on Tukey, Della, and Adroit. There are
+some additional examples of using Python and Matlab, but these are not
+the focus.  More information on these scripts is below.
 
 ## Where?
 
