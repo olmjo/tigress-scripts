@@ -1,5 +1,3 @@
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/olmjo/tigress-scripts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
 # TIGRESS-scripts
 Setup and Example scripts (mostly) for R-based HPC at Princeton University
 
